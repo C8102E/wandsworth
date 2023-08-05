@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>League Table</title>
+    <style>
+        img {
+            border-radius: 50%;
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+        }
+        table {
+            width: 100%;
+            text-align: left;
+        }
+        .matchup-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            margin-bottom: 30px;
+        }
+        .team {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 15px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Matches -->
+    <div class="matchup-container">
+        <!-- ... Repeat the "matchup-container" structure for each matchup ... -->
+        <div class="team">
+            <img src="https://s.yimg.com/cv/apiv2/default/nfl/nfl_4.png" alt="team-logo">
+            <p>Barbara’s Boys</p>
+        </div>
+        <div class="team">
+            <img src="https://yahoofantasysports-res.cloudinary.com/image/upload/t_s192sq/fantasy-logos/d8318dbc38376e075dc0d544f4879a8a379620c9d2b01c63c064e9ad5ec73fa6.png" alt="team-logo">
+            <p>ChampionShip</p>
+        </div>
+    </div>
+    
+    <!-- League Table -->
+    <table>
+        <thead>
+            <tr>
+                <th>Logo</th>
+                <th>Team Name</th>
+                <th>Manager</th>
+                <th>Points</th>
+                <th>Wins</th>
+                <th>Losses</th>
+                <th>Ties</th>
+                <th>Points For</th>
+                <th>Points Against</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Row 1 -->
+            <tr>
+                <td><img src="https://s.yimg.com/cv/apiv2/default/nfl/nfl_4.png"></td>
+                <td><a href="https://football.fantasysports.yahoo.com/f1/558808/1">Barbara’s Boys</a></td>
+                <td>Alex</td>
+                <td>0.0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0.0</td>
+                <td>0.0</td>
+            </tr>
+            <!-- Other rows... -->
+        </tbody>
+    </table>
+</body>
+</html>
