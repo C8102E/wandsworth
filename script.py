@@ -5,7 +5,6 @@ from dotenv import load_dotenv
 
 from yfpy import Data
 from yfpy.query import YahooFantasySportsQuery
-import json
 
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 # ENVIRONMENT SETUP # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
