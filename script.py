@@ -66,15 +66,15 @@ league_player_limit = 101
 
 # configure the Yahoo Fantasy Sports query (change all_output_as_json_str=True if you want to output JSON strings)
 yahoo_query = YahooFantasySportsQuery(
-auth_dir,
-league_id,
-game_id=game_id,
-game_code=game_code,
-offline=False,
-all_output_as_json_str=True,
-consumer_key=os.environ["YFPY_CONSUMER_KEY"],
-consumer_secret=os.environ["YFPY_CONSUMER_SECRET"],
-browser_callback=True
+    auth_dir,
+    league_id,
+    game_id=game_id,
+    game_code=game_code,
+    offline=False,
+    all_output_as_json_str=True,
+    consumer_key=os.environ["YFPY_CONSUMER_KEY"],
+    consumer_secret=os.environ["YFPY_CONSUMER_SECRET"],
+    browser_callback=True
 )
 
 # Manually override league key for example code to work
@@ -137,37 +137,31 @@ player_key = f"{game_id}.p.{player_id}"
 def get_current_league_standings(league_id, game_id, game_code, auth_dir):
     """
     This function retrieves the current league standings and returns them in JSON format.
-
+    
     Parameters:
     league_id (str): The ID of the league.
     game_id (int): The ID of the game.
     game_code (str): The code of the game.
     auth_dir (str): The directory where the authentication information is located.
-
+    
     Returns:
     str: The league standings in JSON format.
     """
-
+    
     # Manually override league key for example code to work
     yahoo_query.league_key = f"{game_id}.l.{league_id}"
-
+    
     league_standings = yahoo_query.get_league_standings()
-
-    # Define the output directory
+    
+   # Define the output directory
     output_dir = Path(auth_dir) / "data"
-    # Ensure the directory exists
-    output_dir.mkdir(parents=True, exist_ok=True)
-
+    output_dir.mkdir(parents=True, exist_ok=True)  # Ensure the directory exists
+    
     # Define the output file path
     output_file = output_dir / f"league_{league_id}_standings.json"
-
+    
     # Write the league standings to the output file
-    try:
-        with output_file.open("w") as f:
-            f.write(league_standings)
-            print("Write successful!")
-    except Exception as e:
-        print(f"Operation failed! Error: {e}")
-
+    with output_file.open("w") as f:
+        f.write(league_standings)
 
 get_current_league_standings(league_id, game_id, game_code, auth_dir)

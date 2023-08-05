@@ -28,4 +28,6 @@ test_output/
 # Credentials
 private*.json
 token*.json
+
+# Data
 data/*
